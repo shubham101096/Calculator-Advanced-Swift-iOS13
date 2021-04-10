@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     private var isFinishedTypingNumber = true
     private var didPressDecimalPointBtn = false
+    var calculator = Calculator()
     
     private var displayValue: Double {
         get {
@@ -34,9 +35,10 @@ class ViewController: UIViewController {
             fatalError("Sender title nil")
         }
         
-        let calculator = Calculator(num: displayValue)
-        guard let result = calculator.performCalculation(op: senderTitle) else { fatalError("Result was nil") }
-        displayValue = result
+        calculator.setNumber(displayValue)
+        if let result = calculator.performCalculation(op: senderTitle) {
+            displayValue = result
+        }
 
 //        if senderTitle == "AC" {
 //            displayValue = 0
