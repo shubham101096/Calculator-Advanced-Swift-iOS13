@@ -1,4 +1,4 @@
-# Calculator-Advanced-Swift-iOS13
+# Calculator-Swift
 An iOS calculator app. 
 I made this app to learn about the swift access levels, tuples, properties and structures.
 
